@@ -1,0 +1,23 @@
+{
+    "extends": [
+        "tslint:latest",
+        "tslint-react"
+    ],
+    "rules": {
+        "no-unused-vars": true,
+        "ordered-imports": false,
+        "object-literal-sort-keys": false,
+        "interface-name": [
+            false,
+            "never-prefix"
+        ],
+        "no-implicit-dependencies": false,
+        "no-submodule-imports": false,
+        "jsx-no-lambda": false
+    },
+    "linterOptions": {
+        "exclude": [
+            "node_modules"
+        ]
+    }
+}

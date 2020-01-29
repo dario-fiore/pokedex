@@ -1,0 +1,68 @@
+@import '../../../global.less';
+
+@left-panel-bg-color: #fafafa;
+
+@right-panel-bg-color: #f0f2f5;
+
+.search-page {
+  display: flex;
+
+  height: 100%;
+
+  .left-panel {
+    padding: 25px;
+
+    width: 50%;
+
+    z-index: 9;
+
+    background: @left-panel-bg-color;
+
+    .drop-shadow(1px, 4px, 26px, 0.09);
+
+    .filter-container {
+      padding-top: 20px;
+
+      padding-bottom: 20px;
+    }
+
+    .idx-counter {
+      background: #e1e1e1;
+
+      color: #a0a0a0;
+
+      text-align: center;
+
+      padding: 3px;
+
+      border-radius: 40px;
+    }
+  }
+
+  .right-panel {
+    display: flex;
+
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 60px;
+    padding-right: 60px;
+
+    width: 50%;
+
+    justify-content: center;
+
+    margin: 0 auto;
+
+    background: @right-panel-bg-color;
+
+    .detail-container {
+      width: 100%;
+      flex-direction: column;
+        display: flex;
+
+        .item {
+          margin-bottom: 26px;
+        }
+    }
+  }
+}
