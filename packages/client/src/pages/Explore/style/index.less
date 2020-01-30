@@ -42,7 +42,7 @@
   .right-panel {
     display: flex;
 
-    padding-top: 50px;
+    padding-top: 70px;
     padding-bottom: 50px;
     padding-left: 60px;
     padding-right: 60px;
@@ -58,11 +58,106 @@
     .detail-container {
       width: 100%;
       flex-direction: column;
-        display: flex;
+      display: flex;
 
-        .item {
-          margin-bottom: 26px;
+      .item {
+        margin-bottom: 26px;
+      }
+    }
+  }
+}
+
+.pokemon-image-container {
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  .pokemon-image {
+    display: flex;
+    flex-direction: column;
+    max-width: 110px;
+    margin-right: 10px;
+
+    .image-container {
+      img {
+        width: 100%;
+      }
+    }
+
+    .text-container {
+      text-align: center;
+      font-size: 15px;
+    }
+  }
+}
+
+.attack-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  .name {
+    margin-left: 10px;
+    flex: 1;
+  }
+
+  .damage {
+    font-weight: 600;
+  }
+}
+
+.pokemon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .image-container {
+    max-width: 180px;
+    max-height: 180px;
+    margin-top: -90px;
+
+    img {
+      width: 100%;
+    }
+  }
+  .title {
+    margin-top: -10px;
+    span {
+      font-size: 21px;
+    }
+  }
+  .type {
+    margin-top: 8px;
+    display: flex;
+    > div {
+      padding: 5px;
+    }
+  }
+
+  .information-container {
+    display: flex;
+    width: 80%;
+    text-align: center;
+    margin-top: 7px;
+    justify-content: center;
+    padding-bottom: 5px;
+
+    > div {
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      flex: 1;
+
+      > div {
+        padding: 2px;
+        .title {
+          font-weight: 600;
+          font-size: 15px;
         }
+      }
+    }
+
+    > div:not(:last-child) {
+      border-right: rgba(112, 112, 112, 0.42) solid thin;
     }
   }
 }

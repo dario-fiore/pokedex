@@ -5,5 +5,7 @@ export default {
   'pages.attacks': 'Attacks',
   'pages.type': 'Type',
   'pages.weight': 'Weight',
-  'pages.height': 'Height'
-}
+  'pages.height': 'Height',
+  'pages.name': 'Name',
+  'pages.classification': 'Classification',
+};

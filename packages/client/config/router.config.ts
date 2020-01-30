@@ -1,7 +1,13 @@
 export default [
   {
     path: '/',
-    component: '../layouts/index',
-    routes: [{ path: '/', component: '../pages/Explore/index' }],
+    component: '../components/WithConnection/index',
+    routes: [
+      {
+        path: '/',
+        component: '../layouts/index',
+        routes: [{ path: '/', component: '../pages/Explore/index' }],
+      },
+    ],
   },
 ];

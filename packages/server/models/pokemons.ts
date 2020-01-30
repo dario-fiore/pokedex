@@ -36,7 +36,10 @@ export function query(args: {
             as,
             A.findIndex(a => a.id === after),
             O.map(a => a + 1),
-            O.fold(() => as, idx => as.slice(idx))
+            O.fold(
+              () => as,
+              idx => as.slice(idx)
+            )
           );
 
   const results: Pokemon[] = pipe(

@@ -3,10 +3,36 @@ type PageInfo {
   hasNextPage: Boolean
 }
 
+type WeightHeight {
+  minimum: String
+  maximum: String
+}
+
+type PokemonEvolution {
+  id: Int
+  name: String
+}
+
+type PokemonAttack {
+  name: String
+  type: String
+  damage: Int
+}
+
+type PokemonAttacks {
+  fast: [PokemonAttack]
+  special: [PokemonAttack]
+}
+
 type Pokemon {
   id: ID!
   name: String
   types: [String]
+  classification: String
+  weight: WeightHeight!
+  height: WeightHeight!
+  evolutions: [PokemonEvolution]
+  attacks: PokemonAttacks
 }
 
 type PokemonEdge {
