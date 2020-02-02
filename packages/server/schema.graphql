@@ -45,8 +45,12 @@ type PokemonsConnection {
   pageInfo: PageInfo
 }
 
-type Query {
-  pokemons(q: String, after: ID, limit: Int): PokemonsConnection
+input FilterInput {
+  name: String
+  type: String
+  classification: String
+}
 
-  pokemonsByType(type: String!): PokemonsConnection
+type Query {
+  pokemons(q: FilterInput, after: ID, limit: Int): PokemonsConnection
 }

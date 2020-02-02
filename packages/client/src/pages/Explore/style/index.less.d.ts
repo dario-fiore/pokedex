@@ -5,6 +5,7 @@ interface CssExports {
   'damage': string;
   'detail-container': string;
   'filter-container': string;
+  'footer': string;
   'idx-counter': string;
   'image-container': string;
   'information-container': string;

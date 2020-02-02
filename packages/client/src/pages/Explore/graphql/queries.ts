@@ -1,8 +1,8 @@
 import gql from 'graphql-tag';
 
 export const GET_POKEMONS = gql`
-  query {
-    pokemons {
+  query Pokemons($filter: FilterInput, $after: ID, $limit: Int) {
+    pokemons(q: $filter, after: $after, limit: $limit) {
       edges {
         cursor
         node {

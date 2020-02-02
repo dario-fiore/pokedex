@@ -10,25 +10,57 @@ interface Pokemon {
   id: string;
   name: string;
   types: string[];
+  classification: string;
 }
 
 const SIZE = 10;
 
-export function query(args: {
+interface FilterInput {
+  name: string;
+  type: string;
+  classification: string;
+}
+
+/**
+ * Fin all pokemons using filter and pagination, all filter will be applied with "and" operator
+ *
+ * @param after
+ * @param limit
+ * @param q
+ */
+export function find(args: {
   after?: string;
   limit?: number;
-  q?: string;
+  q?: FilterInput;
 }): Connection<Pokemon> {
   const { after, q, limit = SIZE } = args;
 
-  const filterByQ: (as: Pokemon[]) => Pokemon[] =
-    // filter only if q is defined
-    q === undefined
+  /**
+   * Filter by name
+   */
+  const filterByNames: (as: Pokemon[]) => Pokemon[] =
+    q?.name === undefined
       ? identity
-      : A.filter(p => p.name.toLowerCase().includes(q.toLowerCase()));
+      : A.filter(p => p.name.toLowerCase().includes(q.name.toLowerCase()));
 
+  /**
+   * Filter by type
+   */
+  const filterByType: (as: Pokemon[]) => Pokemon[] =
+    q?.type === undefined ? identity : A.filter(p => p.types.includes(q.type));
+
+  /**
+   * Filter by classification
+   */
+  const filterByClassification: (as: Pokemon[]) => Pokemon[] =
+    q?.classification === undefined
+      ? identity
+      : A.filter(p => p.classification.includes(q.classification));
+
+  /**
+   * Manage pagination
+   */
   const sliceByAfter: (as: Pokemon[]) => Pokemon[] =
-    // filter only if q is defined
     after === undefined
       ? identity
       : as =>
@@ -44,10 +76,13 @@ export function query(args: {
 
   const results: Pokemon[] = pipe(
     data,
-    filterByQ,
+    filterByNames,
+    filterByType,
+    filterByClassification,
     sliceByAfter,
     // slicing limit + 1 because the `toConnection` function should known the connection size to determine if there are more results
     slice(0, limit + 1)
   );
+
   return toConnection(results, limit);
 }

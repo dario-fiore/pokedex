@@ -19,6 +19,7 @@ export function toConnection<A extends { id: string }>(
     endCursor,
     hasNextPage
   };
+
   return { edges, pageInfo };
 }
 

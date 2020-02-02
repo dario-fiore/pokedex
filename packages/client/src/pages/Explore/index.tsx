@@ -1,43 +1,29 @@
 import Filters from '@/components/Filters';
 import Header from '@/components/Header';
 import Panel from '@/components/Panel';
-import { Pagination, Table, List, Tooltip } from 'antd';
-import React, { useEffect, useState } from 'react';
-import { formatMessage } from 'umi-plugin-react/locale';
-import style from './style/index.less';
-import { GET_POKEMONS } from './graphql/queries';
-import { useQuery } from '@apollo/react-hooks';
-import { ColumnProps } from 'antd/lib/table';
-import { zeroPad } from '@/helpers';
 import PokemonType from '@/components/PokemonType';
+import { zeroPad } from '@/helpers';
+import { useQuery } from '@apollo/react-hooks';
+import { List, Table, Tooltip, Button } from 'antd';
+import { isEmpty, omitBy } from 'lodash';
+import React, { useState } from 'react';
+import { formatMessage } from 'umi-plugin-react/locale';
+import { columns } from './columns';
+import { GET_POKEMONS } from './graphql/queries';
+import { pokemonClassifications, pokemonTypes } from './helpers';
+import style from './style/index.less';
 
 interface OwnProps {}
 
-const columns: ColumnProps<IEdge>[] = [
-  {
-    title: '',
-    dataIndex: 'cursor',
-    key: 'cursor',
-    render: (value: string) => <div className={style['idx-counter']}>#{value}</div>,
-  },
-  {
-    title: formatMessage({ id: 'pages.name' }),
-    dataIndex: 'node.name',
-    key: 'node.name',
-    render: (value: string) => <a onClick={() => true}>{value}</a>,
-  },
-  {
-    title: formatMessage({ id: 'pages.classification' }),
-    dataIndex: 'node.classification',
-    key: 'node.classification',
-  },
-  {
-    title: formatMessage({ id: 'pages.type' }),
-    dataIndex: 'node.types',
-    key: 'node.types',
-    render: (value: string[]) => <span>{value.map(type => type)}</span>,
-  },
-];
+interface IVariable {
+  filter: {
+    name: string;
+    type?: string;
+    classification?: string;
+  };
+  after: number;
+  limit: number;
+}
 
 /**
  * This page show the basic page in order filter and view all pokemons
@@ -46,29 +32,39 @@ const columns: ColumnProps<IEdge>[] = [
  */
 //@ts-ignore
 const SearchPage: React.FC<OwnProps> = props => {
-  const response = useQuery<IPokemons>(GET_POKEMONS).data;
+  const [filter, setFilter] = useState<any>({});
 
-  //@ts-ignore
-  const [data, setData] = useState<IPokemons>(response);
+  const [limit] = useState<number>(10);
+
+  const [after, setAfter] = useState<any>(undefined);
 
   const [selected, setSelected] = useState<IEdge>();
 
-  console.log('response: ', useQuery<IPokemons>(GET_POKEMONS));
+  const response = useQuery<IPokemons, Partial<IVariable>>(GET_POKEMONS, {
+    variables: { filter, limit, after },
+  }).data;
 
-  useEffect(() => {});
+  const onSearch = (incomingFilter: { [key: string]: string }) => {
+    const criteria = { ...filter, ...incomingFilter };
+    setFilter(omitBy(criteria, isEmpty));
+    setAfter(undefined);
+  };
 
   return (
     <div className={style['search-page']}>
+      {/* Left panel */}
       <div className={style['left-panel']}>
-        {/* Left panel */}
-
         <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
           <div>
             <Header />
           </div>
 
           <div className={style['filter-container']}>
-            <Filters />
+            <Filters
+              onSearch={onSearch}
+              classifications={pokemonClassifications}
+              types={pokemonTypes}
+            />
           </div>
 
           <div style={{ flex: '1' }}>
@@ -79,17 +75,25 @@ const SearchPage: React.FC<OwnProps> = props => {
                 };
               }}
               pagination={false}
-              size={'default'}
+              size={'middle'}
               dataSource={response?.pokemons.edges}
               columns={columns}
             />
           </div>
 
-          <div>
-            <Pagination simple defaultCurrent={2} total={50} />
+          <div className={style.footer}>
+            <Button
+              onClick={() => setAfter(response?.pokemons.pageInfo.endCursor)}
+              disabled={!response?.pokemons.pageInfo.hasNextPage}
+              block={true}
+              type="primary"
+            >
+              Load more...
+            </Button>
           </div>
         </div>
       </div>
+      {/* End Left panel */}
 
       <div className={style['right-panel']}>
         {/* Right panel */}

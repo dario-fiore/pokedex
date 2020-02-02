@@ -2,9 +2,15 @@ interface IResponse<T> {
   data: T;
 }
 
+interface IPageInfo {
+  endCursor: string;
+  hasNextPage: boolean;
+}
+
 interface IPokemons {
   pokemons: {
     edges: Array<IEdge>;
+    pageInfo: IPageInfo;
   };
 }
 
