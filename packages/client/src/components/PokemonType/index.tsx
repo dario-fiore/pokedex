@@ -1,6 +1,5 @@
 import React, { Suspense } from 'react';
 import style from './index.less';
-//type PokemonIconType = 'bug' | 'crack' | 'dragon';
 
 interface IPokemonTypeProps {
   /***
@@ -30,6 +29,7 @@ const typeToIconMap: IconTypeMap = {
   Psychic: { color: '#A02B6D', image: 'eye' },
   Rock: { color: '#58575E', image: 'rock' },
   Dark: { color: '#040706', image: 'moon' },
+  Steel: { color: '#5F756D', image: 'hook' },
 };
 
 /**
@@ -38,6 +38,8 @@ const typeToIconMap: IconTypeMap = {
  */
 const PokemonType: React.FC<IPokemonTypeProps> = props => {
   const { size, icon } = props;
+
+  console.log('icon: ', icon);
 
   const Icon = React.lazy(() => import(`../../assets/${typeToIconMap[icon].image}`));
 

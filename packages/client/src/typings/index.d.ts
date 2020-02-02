@@ -81,4 +81,5 @@ type PokemonType =
   | 'Fighting'
   | 'Psychic'
   | 'Ice'
-  | 'Dark';
+  | 'Dark'
+  | 'Steel';

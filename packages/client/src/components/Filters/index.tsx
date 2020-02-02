@@ -23,8 +23,6 @@ type FilterType = 'classification' | 'type' | 'name';
 
 const Filters: React.FC<IFiltersProps> = props => {
   const onSearch = (value: string, key: FilterType) => {
-    // const criteria = { [key]: value };
-    // props.onSearch(_.omitBy(criteria, _.isNil));
     props.onSearch({ [key]: value });
   };
 
@@ -65,6 +63,7 @@ const Filters: React.FC<IFiltersProps> = props => {
           <Search
             onSearch={(value: string) => onSearch(value, 'name')}
             enterButton
+            placeholder={formatMessage({ id: 'components.filters.inputName' })}
             style={{ width: '100%' }}
           />
         </Col>

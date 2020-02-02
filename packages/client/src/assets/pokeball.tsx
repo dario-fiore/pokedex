@@ -1,7 +1,6 @@
-import React from "react"
+import React from 'react';
 
-interface SvgProps {   
-}
+interface SvgProps {}
 
 const PokemonBall: React.FC<SvgProps> = props => {
   return (
@@ -11,7 +10,7 @@ const PokemonBall: React.FC<SvgProps> = props => {
         fill="#8598a6"
       />
     </svg>
-  )
-}
+  );
+};
 
-export default PokemonBall
+export default PokemonBall;

@@ -8,25 +8,32 @@ import style from './style/index.less';
  */
 export const columns: ColumnProps<IEdge>[] = [
   {
+    width: 100,
     dataIndex: 'cursor',
     key: 'cursor',
     render: (value: string) => <div className={style['idx-counter']}>#{value}</div>,
   },
   {
-    title: formatMessage({ id: 'pages.name' }),
+    title: <span className={style['table-header']}>{formatMessage({ id: 'pages.name' })}</span>,
     dataIndex: 'node.name',
     key: 'node.name',
+    width: 150,
     render: (value: string) => <a onClick={() => true}>{value}</a>,
   },
   {
-    title: formatMessage({ id: 'pages.classification' }),
+    width: 250,
+    title: (
+      <span className={style['table-header']}>{formatMessage({ id: 'pages.classification' })}</span>
+    ),
     dataIndex: 'node.classification',
     key: 'node.classification',
   },
   {
-    title: formatMessage({ id: 'pages.type' }),
+    width: 250,
+    title: <span className={style['table-header']}>{formatMessage({ id: 'pages.type' })}</span>,
     dataIndex: 'node.types',
     key: 'node.types',
-    render: (value: string[]) => <span>{value.map(type => type)}</span>,
+    render: (value: string[]) =>
+      value.map(type => <span className={style['separated-list']}>{type}</span>),
   },
 ];

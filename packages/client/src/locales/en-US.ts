@@ -1,6 +1,7 @@
 export default {
   'components.filters.allClassification': 'All classifications',
   'components.filters.allTypes': 'All types',
+  'components.filters.inputName': 'Input pokemon name',
   'pages.evolutions': 'Evolutions',
   'pages.attacks': 'Attacks',
   'pages.type': 'Type',
@@ -8,4 +9,7 @@ export default {
   'pages.height': 'Height',
   'pages.name': 'Name',
   'pages.classification': 'Classification',
+  'pages.selectPokemon': 'Select a pokemon',
+  'pages.noPokemonFound': 'Oops! No pokemon found!',
+  'pages.loadMore': 'Load more...',
 };
