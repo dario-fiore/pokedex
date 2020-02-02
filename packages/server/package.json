@@ -1,5 +1,5 @@
 {
-  "name": "@frontend-assignment/server",
+  "name": "@pokedex/server",
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {

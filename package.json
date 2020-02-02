@@ -1,15 +1,9 @@
 {
-  "name": "frontend-assignment",
+  "name": "pokedex",
   "author": {
-    "name": "Walter Barbagallo",
-    "email": "walter.barbagallo@satispay.com"
+    "name": "Dario Fiore",
+    "email": "dario.fiore@live.it"
   },
-  "contributors": [
-    {
-      "name": "Alessio Dionisi",
-      "email": "alessio.dionisi@satispay.com"
-    }
-  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
