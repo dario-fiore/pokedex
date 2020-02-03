@@ -31,13 +31,13 @@
 
 ## 🎨 UI/UX
 
-After defining my tech stack, I started with UI/UX. This activity took me **4 man/day**. I spent 1 m/d finding my use cases using sites like Dribble, Behance, etc. After that I spent the remaining days in order to prototype my final UX using Adobe XD. Prototype is available [here](https://xd.adobe.com/view/011c7848-569e-43a0-4075-d53bbf04deee-772d/?fullscreen).
+After defining my tech stack, I started with UI/UX. This activity took me **4 men/day**. I spent 1 m/d finding my use cases using sites like Dribble, Behance, etc. After that I spent the remaining days in order to prototype my final UX using Adobe XD. Prototype is available [here](https://xd.adobe.com/view/011c7848-569e-43a0-4075-d53bbf04deee-772d/?fullscreen).
 
 _For this project I skip wireframing step due to limited time_.
 
 ## 🔨 Development
 
-After prortype a stable version, I started developement phase. This phase took me **4 man/day** and I work on client and server both.
+After prortype a stable version, I started developement phase. This phase took me **4 men/day** and I work on client and server both.
 
 **Server** implementation was already developed and I made small changes in order to support other filter criteria. Changes affects graphql schema and model implementation.
 
@@ -46,7 +46,7 @@ _Due to limited time I skip some improvements / implementations (you can see the
 
 ## 📦 Deploy
 
-In order to view a live demo I made a deploy on a virtual machine powered by **AWS EC2** (Ubuntu). I had some paste experience, so, this task took me **0,5 man/day**.
+In order to view a live demo I made a deploy on a virtual machine powered by **AWS EC2** (Ubuntu). I had some paste experience, so, this task took me **0,5 men/day**.
 
 ## 📌 Improvements
 
