@@ -3,10 +3,13 @@ import style from './index.less';
 
 interface IPokemonTypeProps {
   /***
-   *
+   * Type of pokemon
    */
   icon: PokemonType;
 
+  /**
+   * Dimension of badge
+   */
   size?: number;
 }
 
@@ -33,13 +36,11 @@ const typeToIconMap: IconTypeMap = {
 };
 
 /**
- *
+ * This component allow to render respective "badge icon" for each pokemon type. It load dynamically and on-demand predefined icon
  * @param props
  */
 const PokemonType: React.FC<IPokemonTypeProps> = props => {
   const { size, icon } = props;
-
-  console.log('icon: ', icon);
 
   const Icon = React.lazy(() => import(`../../assets/${typeToIconMap[icon].image}`));
 

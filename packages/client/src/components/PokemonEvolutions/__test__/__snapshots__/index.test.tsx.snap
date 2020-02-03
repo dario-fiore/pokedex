@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components/PokemonEvolutions Get snapshot 1`] = `
+<div
+  className="panel-component"
+>
+  <div>
+    <div
+      className="pokemon-image-container"
+    />
+  </div>
+</div>
+`;

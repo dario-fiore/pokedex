@@ -4,7 +4,7 @@ import { formatMessage } from 'umi-plugin-react/locale';
 import style from './style/index.less';
 
 /**
- * Column definition
+ * Column definition of table
  */
 export const columns: ColumnProps<IEdge>[] = [
   {

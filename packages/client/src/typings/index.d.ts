@@ -83,3 +83,15 @@ type PokemonType =
   | 'Ice'
   | 'Dark'
   | 'Steel';
+
+interface ISearchCriteria {
+  name: string;
+  type: string;
+  classification: string;
+}
+
+interface IFilterVariable {
+  filter: Partial<ISearchCriteria>;
+  after: number;
+  limit: number;
+}

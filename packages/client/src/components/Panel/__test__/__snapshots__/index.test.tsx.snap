@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components/Panel Render panel wihtout title 1`] = `
+<div
+  className="panel-component"
+>
+  <div>
+    <span>
+      content
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Components/Panel Render panel with a title 1`] = `
+<div
+  className="panel-component"
+>
+  <div
+    className="header"
+  >
+    <span
+      className="icon"
+    >
+      <svg
+        height={13.904}
+        viewBox="0 0 13.905 13.904"
+        width={13.905}
+      >
+        <path
+          d="M11.869 2.036a6.952 6.952 0 00-9.832 9.832A6.955 6.955 0 0010.55 12.9a.543.543 0 10-.563-.929A5.867 5.867 0 011.112 7.5H4.57a2.444 2.444 0 004.767 0h3.457a5.857 5.857 0 01-.969 2.713.543.543 0 00.9.6 6.935 6.935 0 00-.858-8.775zm-4.916-.95a5.874 5.874 0 015.841 5.323H9.336a2.444 2.444 0 00-4.767 0H1.112a5.874 5.874 0 015.841-5.323zm0 7.224a1.358 1.358 0 111.358-1.358A1.359 1.359 0 016.953 8.31zm0 0"
+          fill="#8598a6"
+        />
+      </svg>
+    </span>
+    <span
+      className="title"
+    >
+      title
+    </span>
+  </div>
+  <div>
+    <span>
+      content
+    </span>
+  </div>
+</div>
+`;

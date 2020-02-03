@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components/PokemonInfo Get snapshot 1`] = `
+<div
+  className="panel-component"
+>
+  <div>
+    <div
+      className="pokemon-container"
+    >
+      <div
+        className="image-container"
+      >
+        <img
+          src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/undefined.png"
+        />
+      </div>
+      <div
+        className="title"
+      >
+        <span />
+      </div>
+      <div
+        className="type"
+      />
+      <div
+        className="information-container"
+      >
+        <div>
+          <div />
+          <div>
+            <span />
+          </div>
+        </div>
+        <div>
+          <div>
+            <span
+              className="title"
+            />
+          </div>
+          <div>
+            <span />
+          </div>
+        </div>
+        <div>
+          <div>
+            <span
+              className="title"
+            />
+          </div>
+          <div>
+            <span />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

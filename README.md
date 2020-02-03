@@ -31,28 +31,28 @@
 
 ## 🎨 UI/UX
 
-After defining my tech stack, I started with UI/UX. This activity took me **4 men/day**. I spent 1 m/d finding my use cases using sites like Dribble, Behance, etc. After that I spent the remaining days in order to prototype my final UX using Adobe XD. Prototype is available [here](https://xd.adobe.com/view/011c7848-569e-43a0-4075-d53bbf04deee-772d/?fullscreen).
+After defining my tech stack, I started with UI/UX. I spent 1 men/day finding my use cases using sites like Dribble, Behance, etc. After that, I spent the remaining days in order to prototype my final UX using Adobe XD. Prototype is available [here](https://xd.adobe.com/view/011c7848-569e-43a0-4075-d53bbf04deee-772d/?fullscreen).
 
 _For this project I skip wireframing step due to limited time_.
 
 ## 🔨 Development
 
-After prortype a stable version, I started developement phase. This phase took me **4 men/day** and I work on client and server both.
+After prortype a stable version, I started developement phase.
 
 **Server** implementation was already developed and I made small changes in order to support other filter criteria. Changes affects graphql schema and model implementation.
 
-**Client** implementation was built from scratch. First of all I setted up project using UmiJS (create-umi-app). The result was a production-ready project that allow me to start (in 30 minutes) my development without worring about boring project configuration (webpack loaders, dev scripts, etc). When I develop I tried to follow TDD approch (although team was composed of 1 person (me ✌️), so I tried to write a test for each implementations.
+**Client** implementation was built from scratch. First of all I setted up project using UmiJS (create-umi-app). The result was a production-ready project that allow me to start (in 30 minutes) my development without worring about boring project configuration (webpack loaders, dev scripts, etc). During development I include some automated unit-tests for each components (or page) in order to improve reliability of code.
 _Due to limited time I skip some improvements / implementations (you can see these in improvements section)_
 
 ## 📦 Deploy
 
-In order to view a live demo I made a deploy on a virtual machine powered by **AWS EC2** (Ubuntu). I had some paste experience, so, this task took me **0,5 men/day**.
+In order to view a live demo I made a deploy on a virtual machine powered by **AWS EC2** (Ubuntu). I manage process of NodeJS server using [pm2](https://pm2.keymetrics.io/) then I use ngnix in order to forward request to right service.
 
 ## 📌 Improvements
 
 - Boost project collaboration introducing CI/CD workflow
 - Use cached data, configuring cache with ApolloClient
-- Improve stability introducing an error boundary
+- Introduce an error boundary
 - Make application layout responsive
-- Improve application loading satate
+- Managing laoding state
 - Generate project doc (usign typedoc)

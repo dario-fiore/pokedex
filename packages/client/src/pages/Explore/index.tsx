@@ -1,45 +1,46 @@
+import Player from '@/assets/player';
+import PokemonLogo from '@/assets/pokemon';
 import Filters from '@/components/Filters';
-import Header from '@/components/Header';
 import { useQuery } from '@apollo/react-hooks';
-import { Button, Table, Result } from 'antd';
+import { Button, Result, Table } from 'antd';
 import { isEmpty, omitBy } from 'lodash';
 import React, { useState } from 'react';
+import { formatMessage } from 'umi-plugin-react/locale';
 import { columns } from './columns';
 import PokemonDetailPanel from './detail';
 import { GET_POKEMONS } from './graphql/queries';
 import { pokemonClassifications, pokemonTypes } from './helpers';
 import style from './style/index.less';
-import { formatMessage } from 'umi-plugin-react/locale';
-import Player from '@/assets/player';
 
-interface OwnProps {}
-
-interface IVariable {
-  filter: {
-    name: string;
-    type?: string;
-    classification?: string;
-  };
-  after: number;
-  limit: number;
-}
+const FILTER_QUERY_LIMIT = 9;
 
 /**
  * This page show the basic page in order filter and view all pokemons
  *
  * @param props
  */
-//@ts-ignore
-const SearchPage: React.FC<OwnProps> = props => {
-  const [filter, setFilter] = useState<any>({});
+const Explore: React.FC = () => {
+  /**
+   * Filter variable hook
+   */
+  const [filter, setFilter] = useState<Partial<ISearchCriteria>>({});
 
-  const [limit] = useState<number>(9);
+  /**
+   * Limit data hook
+   */
+  const [limit] = useState<number>(FILTER_QUERY_LIMIT);
 
+  /**
+   * Pagination hook
+   */
   const [after, setAfter] = useState<any>(undefined);
 
+  /**
+   * Selected pokemon hook
+   */
   const [selected, setSelected] = useState<IEdge>();
 
-  const response = useQuery<IPokemons, Partial<IVariable>>(GET_POKEMONS, {
+  const response = useQuery<IPokemons, Partial<IFilterVariable>>(GET_POKEMONS, {
     variables: { filter, limit, after },
   }).data;
 
@@ -55,7 +56,7 @@ const SearchPage: React.FC<OwnProps> = props => {
       <div className={style['left-panel']}>
         <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
           <div>
-            <Header />
+            <PokemonLogo />
           </div>
 
           <div className={style['filter-container']}>
@@ -115,4 +116,4 @@ const SearchPage: React.FC<OwnProps> = props => {
   );
 };
 
-export default SearchPage;
+export default Explore;

@@ -3,13 +3,19 @@ import Panel from '../Panel';
 import { formatMessage } from 'umi-plugin-react/locale';
 import { List, Tooltip } from 'antd';
 import style from './index.less';
-
 import PokemonType from '@/components/PokemonType';
 
 interface IPokemonAttacksProps {
+  /**
+   * Pokemon attacks object
+   */
   attacks?: IAttacks;
 }
 
+/**
+ * This component allow to show pokemon attacks. Informations are encapuslated in a <Panel/> component
+ * @param props
+ */
 const PokemonAttacks: React.FC<IPokemonAttacksProps> = props => {
   const { attacks } = props;
   return (

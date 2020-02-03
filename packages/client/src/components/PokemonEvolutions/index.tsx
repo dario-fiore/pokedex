@@ -5,11 +5,14 @@ import style from './index.less';
 import { zeroPad } from '@/helpers';
 
 interface IPokemonEvolutions {
+  /**
+   * Pokemon evolutions array
+   */
   evolutions: IEvolution[];
 }
 
 /**
- *
+ * This component allow to show pokemon evolutions. Informations are encapuslated in a <Panel/> component
  * @param props
  */
 const PokemonEvolutions: React.FC<IPokemonEvolutions> = props => {

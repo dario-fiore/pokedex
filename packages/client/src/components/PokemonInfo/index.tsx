@@ -6,9 +6,16 @@ import PokemonType from '@/components/PokemonType';
 import { formatMessage } from 'umi-plugin-react/locale';
 
 interface IPokemonInfoProps {
+  /**
+   * Selected pokemon item
+   */
   item?: IEdge;
 }
 
+/**
+ * This component allow to show pokemon basic information. Informations are encapuslated in a <Panel/> component
+ * @param props
+ */
 const PokemonInfo: React.FC<IPokemonInfoProps> = props => {
   const { item } = props;
   return (

@@ -1,0 +1,9 @@
+{
+    "apps": [
+        {
+            "name": "pokedex",
+            "script": "npm",
+            "args": "start"
+        }
+    ]
+}

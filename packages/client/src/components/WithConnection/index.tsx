@@ -2,10 +2,12 @@ import { ApolloProvider } from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
 import React from 'react';
 
-interface IWithConnectionProps {}
-
-const WithConnection: React.FC<IWithConnectionProps> = props => {
+/**
+ * HOC Used to provide to all children component apollo client connections
+ */
+const WithConnection: React.FC = props => {
   const buildApolloClient = () => {
+    //[TODO] - Use process.env variable
     return new ApolloClient<unknown>({
       uri: 'http://localhost:4000',
     });

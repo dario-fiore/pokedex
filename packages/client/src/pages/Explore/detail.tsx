@@ -8,11 +8,14 @@ import { formatMessage } from 'umi-plugin-react/locale';
 import EmptyBall from '@/assets/emptyball';
 
 interface OwnProps {
+  /**
+   * Selected pokemon item
+   */
   selected?: IEdge;
 }
 
 /**
- * Pokemon detail right panel
+ * Pokemon detail right panel, it use memo in order to avoid re-render each time you use component of the left panel
  *
  * @param props
  */

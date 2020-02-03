@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components/PokemonType Get snapshot 1`] = `
+<div
+  className="pokemon-type-component"
+  style={
+    Object {
+      "backgroundColor": "#74515C",
+      "height": undefined,
+      "width": undefined,
+    }
+  }
+>
+  <div
+    className="pokemon-type-component"
+    style={
+      Object {
+        "backgroundColor": "#eee",
+      }
+    }
+  />
+</div>
+`;

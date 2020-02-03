@@ -1,4 +1,4 @@
-@import '../../../global.less';
+@import (reference) '../../../global.less';
 
 @left-panel-bg-color: #fafafa;
 
@@ -6,35 +6,25 @@
 
 .search-page {
   display: flex;
-
   height: 100%;
 
   .left-panel {
     padding: 25px;
-
     width: 50%;
-
     z-index: 9;
-
     background: @left-panel-bg-color;
-
     .drop-shadow(1px, 4px, 26px, 0.09);
 
     .filter-container {
       padding-top: 20px;
-
       padding-bottom: 20px;
     }
 
     .idx-counter {
       background: #e1e1e1;
-
       color: #a0a0a0;
-
       text-align: center;
-
       border-radius: 40px;
-
       width: 70%;
       font-size: 11px;
       padding: 5px;
@@ -43,19 +33,14 @@
 
   .right-panel {
     display: flex;
-
     overflow-y: scroll;
     padding-top: 70px;
     padding-bottom: 50px;
     padding-left: 60px;
     padding-right: 60px;
-
     width: 50%;
-
     justify-content: center;
-
     margin: 0 auto;
-
     background: @right-panel-bg-color;
 
     .detail-container {
@@ -68,9 +53,6 @@
       }
     }
   }
-}
-
-.separated-list {
 }
 
 .separated-list:not(:last-child):after {

@@ -18,10 +18,6 @@
     }
   }
 
-  .title:not(:last-child):after {
-    content: ' / ';
-  }
-
   .type {
     margin-top: 8px;
     display: flex;
@@ -37,6 +33,10 @@
     margin-top: 7px;
     justify-content: center;
     padding-bottom: 5px;
+
+    .title:not(:last-child):after {
+      content: ' / ';
+    }
 
     > div {
       padding-left: 15px;

@@ -1,22 +1,17 @@
-@import '../../global.less';
+@import (reference) '../../global.less';
 
 .panel-component {
   width: 100%;
-
   min-height: 150px;
-
-  .rounded(13px);
+  background: #fff;
   padding: 15px;
   padding-left: 25px;
   padding-right: 25px;
-
   .drop-shadow(0px, 3px, 26px, 0.04);
-
-  background: #fff;
+  .rounded(13px);
 
   .header {
     padding: 10px;
-
     border-bottom: #c0c9d1 solid thin;
 
     .icon {
@@ -24,7 +19,7 @@
     }
 
     .title {
-      vertical-align: middle;
+      padding-top: 10px;
       padding-left: 8px;
       font-weight: 500;
       color: #8598a6;

@@ -4,10 +4,26 @@ import { formatMessage } from 'umi-plugin-react/locale';
 import style from './index.less';
 
 interface IFiltersProps {
+  /**
+   * Classification of pokemon (e.g. Seed | Lizard)
+   */
   classifications: Array<PokemonClassification>;
+
+  /**
+   * Types of pokemon (e.g. Grass | Poison)
+   */
   types: Array<PokemonType>;
+
+  /**
+   * Called when a filter is setted. It manage an object with key that rapresent the field of API response
+   */
   onSearch: (filter: { [key: string]: string }) => void;
 }
+
+/**
+ * Type of allowed filter keys
+ */
+type FilterType = 'classification' | 'type' | 'name';
 
 const { Search } = Input;
 
@@ -18,9 +34,6 @@ const { Option } = Select;
  *
  * @param props
  */
-
-type FilterType = 'classification' | 'type' | 'name';
-
 const Filters: React.FC<IFiltersProps> = props => {
   const onSearch = (value: string, key: FilterType) => {
     props.onSearch({ [key]: value });
