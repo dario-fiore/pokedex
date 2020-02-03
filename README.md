@@ -1,7 +1,7 @@
 ![Header  - Github](https://user-images.githubusercontent.com/32436485/73615683-6bc65a00-460a-11ea-84ed-e6bbe63780b0.png)
 
 <div align="center"><strong>Pokedex</strong></div> 
-<div align="center">This project is a sample demostration of usage of front-end technologies that allow to browse and search using a predefined set of pokemons. With this project I'll show to you, how I solve this *exercise* from UI/UX design to final Deploy.</div>
+<div align="center">This project is a sample demonstration of usage of front-end technologies that allow to browse and search using a predefined set of pokemons. With this project I'll show to you, how I solve this *exercise* from UI/UX design to final Deploy.</div>
 
 <br/>
 
@@ -37,16 +37,16 @@ _For this project I skip wireframing step due to limited time_.
 
 ## 🔨 Development
 
-After prortype a stable version, I started developement phase.
+After prototype a stable version, I started development phase.
 
 **Server** implementation was already developed and I made small changes in order to support other filter criteria. Changes affects graphql schema and model implementation.
 
-**Client** implementation was built from scratch. First of all I setted up project using UmiJS (create-umi-app). The result was a production-ready project that allow me to start (in 30 minutes) my development without worring about boring project configuration (webpack loaders, dev scripts, etc). During development I include some automated unit-tests for each components (or page) in order to improve reliability of code.
+**Client** implementation was built from scratch. First of all I setted up project using UmiJS (create-umi-app). The result was a production-ready project that allow me to start (in 30 minutes) my development without worrying about boring project configuration (webpack loaders, dev scripts, etc). During development I include some automated unit-tests for each components (or page) in order to improve reliability of code.
 _Due to limited time I skip some improvements / implementations (you can see these in improvements section)_
 
 ## 📦 Deploy
 
-In order to view a live demo I made a deploy on a virtual machine powered by **AWS EC2** (Ubuntu). I manage process of NodeJS server using [pm2](https://pm2.keymetrics.io/) then I use ngnix in order to forward request to right service.
+In order to view a live demo I made deploy on a virtual machine powered by **AWS EC2** (Ubuntu). I manage process of NodeJS server using [pm2](https://pm2.keymetrics.io/) then I use ngnix in order to forward request to right service.
 
 If you want to start locally pokedex you can run script `yarn install` then `yarn run server` and `yarn run client`.
 
@@ -56,5 +56,5 @@ If you want to start locally pokedex you can run script `yarn install` then `yar
 - Use cached data, configuring cache with ApolloClient
 - Introduce an error boundary
 - Make application layout responsive
-- Managing laoding state
-- Generate project doc (usign typedoc)
+- Managing loading state
+- Generate project doc (using typedoc)
