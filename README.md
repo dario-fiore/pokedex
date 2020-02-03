@@ -1,6 +1,6 @@
 ![Header  - Github](https://user-images.githubusercontent.com/32436485/73615683-6bc65a00-460a-11ea-84ed-e6bbe63780b0.png)
 
-<div align="center"><strong>Pokedex</strong></div>
+<div align="center"><strong>Pokedex</strong></div> 
 <div align="center">This project is a sample demostration of usage of front-end technologies that allow to browse and search using a predefined set of pokemons. With this project I'll show to you, how I solve this *exercise* from UI/UX design to final Deploy.</div>
 
 <br/>
@@ -12,6 +12,9 @@
   </a>
   <!-- devDependency Status -->
  <a href="https://david-dm.org/dario-fiore/pokedex" title="dependencies status"><img src="https://david-dm.org/dario-fiore/pokedex/status.svg"/></a>
+
+<a href="http://ec2-3-8-3-91.eu-west-2.compute.amazonaws.com" title="dependencies status"><img src="https://img.shields.io/badge/live-preview-blue"/></a>
+
 </div>
 
 ## ⚡️ Tech Stack
@@ -43,11 +46,13 @@ _Due to limited time I skip some improvements / implementations (you can see the
 
 ## 📦 Deploy
 
+In order to view a live demo I made a deploy on a virtual machine powered by **AWS EC2** (Ubuntu). I had some paste experience, so, this task took me **0,5 man/day**.
+
 ## 📌 Improvements
 
-- Boost project collaboration introducing a **CI/CD** system
-- Use cache with Graphql
-- Add some loading state
-- Add error boundary
-- Generate docs using tsdoc
+- Boost project collaboration introducing CI/CD workflow
+- Use cached data, configuring cache with ApolloClient
+- Improve stability introducing an error boundary
 - Make application layout responsive
+- Improve application loading satate
+- Generate project doc (usign typedoc)
