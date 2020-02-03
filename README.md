@@ -6,15 +6,10 @@
 <br/>
 
 <div align="center">
-  <!-- Dependency Status -->
-  <a href="https://david-dm.org/dario-fiore/pokedex">
-    <img src="https://david-dm.org/dario-fiore/pokedex.svg" alt="Dependency Status" />
+    <a target="_blank" href="http://ec2-3-8-3-91.eu-west-2.compute.amazonaws.com"><img src="https://img.shields.io/badge/live-preview-blue"/></a>
+  <a target="_blank"  href="https://xd.adobe.com/view/011c7848-569e-43a0-4075-d53bbf04deee-772d/?fullscreen">
+    <img src="https://img.shields.io/badge/ux-prototype-orange"  />
   </a>
-  <!-- devDependency Status -->
- <a href="https://david-dm.org/dario-fiore/pokedex" title="dependencies status"><img src="https://david-dm.org/dario-fiore/pokedex/status.svg"/></a>
-
-<a href="http://ec2-3-8-3-91.eu-west-2.compute.amazonaws.com" title="dependencies status"><img src="https://img.shields.io/badge/live-preview-blue"/></a>
-
 </div>
 
 ## ⚡️ Tech Stack
