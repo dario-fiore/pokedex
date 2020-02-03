@@ -48,6 +48,8 @@ _Due to limited time I skip some improvements / implementations (you can see the
 
 In order to view a live demo I made a deploy on a virtual machine powered by **AWS EC2** (Ubuntu). I manage process of NodeJS server using [pm2](https://pm2.keymetrics.io/) then I use ngnix in order to forward request to right service.
 
+If you want to start locally pokedex you can run script `yarn install` then `yarn run server` and `yarn run client`.
+
 ## 📌 Improvements
 
 - Boost project collaboration introducing CI/CD workflow
