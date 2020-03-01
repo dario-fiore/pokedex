@@ -1,7 +1,7 @@
 ![Header  - Github](https://user-images.githubusercontent.com/32436485/73615683-6bc65a00-460a-11ea-84ed-e6bbe63780b0.png)
 
 <div align="center"><strong>Pokedex</strong></div> 
-<div align="center">This project is a sample demonstration of usage of front-end technologies that allow to browse and search using a predefined set of pokemons. With this project I'll show to you, how I solve this *exercise* from UI/UX design to final Deploy.</div>
+<div align="center">This project is a sample demonstration of usage of front-end technologies that allow to browse and search using a predefined set of pokemons. With this project I'll show to you, how I solve this projet from UI/UX design to final Deploy.</div>
 
 <br/>
 
